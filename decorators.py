@@ -15,6 +15,7 @@ def calculate_exec(function):
 
 @calculate_exec
 def main():
+    print("Decorators in python")
     for index in range(1, 10000000):
         pass
 

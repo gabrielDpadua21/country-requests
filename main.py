@@ -1,5 +1,6 @@
 import json
 import sys
+import argparse
 
 import requests
 from prettytable import PrettyTable
@@ -38,7 +39,10 @@ def parse_json_infos(data=None):
 if __name__ == "__main__":
     print("## Welcome to the world of countries! ##")
     print("Usage: python3 main.py <country_name>")
-    if len(sys.argv) > 1:
-        country = sys.argv[1]
-        get_country_information(country)
+    parser = argparse.ArgumentParser(description='Process informations')
+    parser.add_argument('country', type=str, help='Country name to search.')
+    args = parser.parse_args()
+    get_country_information(args.country)
     print("Byee!")
+
+
